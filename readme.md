@@ -9,4 +9,4 @@ http://localhost:3000/deleteCliente
 http://localhost:3000/qrcode
 
 <!-- enviar uma mensagem -->
-http://localhost:3000/enviarmsg?numero=<NUMBER>&msg=<MSG>
+http://localhost:3000/enviarmsg?numero=%NUM%&msg=%MSG%
