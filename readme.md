@@ -3,7 +3,7 @@
 http://localhost:3000/init
 
 <!-- deletar client -->
-http://localhost:3000/deleteCliente'
+http://localhost:3000/deleteCliente
 
 <!-- let o qrcode por rota -->
 http://localhost:3000/qrcode
