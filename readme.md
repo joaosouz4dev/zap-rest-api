@@ -1,4 +1,4 @@
-# Api Premium
+# Zap Rest Api
 
 > Documentação para mostrar sobre todas as rotas e possibilidades do sistema.
 
