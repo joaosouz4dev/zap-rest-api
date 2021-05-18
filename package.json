@@ -1,17 +1,54 @@
 {
-  "name": "teste-venom-bot-express",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "start": "node .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "name": "api-premium",
+  "version": "3.0.0",
+  "description": "Sistema para controle do whatsapp!",
+  "author": {
+    "name": "João Victor Souza",
+    "email": "web@joaovictorsouza.dev",
+    "url": "https://joaovictorsouza.dev"
   },
-  "author": "",
+  "engines": {
+    "node": "14.9"
+  },
+  "keywords": [
+    "whatsapp",
+    "machine learning",
+    "ai",
+    "bot",
+    "api"
+  ],
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "pm2 start index.js --name 'api-premium'",
+    "dev": "set PORT=3500&& set NODE_ENV=development&& nodemon index.js"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "tokens/*",
+      "upload/*"
+    ]
+  },
   "license": "ISC",
   "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.0.20",
+    "axios": "^0.21.1",
+    "chalk": "^4.1.0",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "cron": "^1.8.2",
+    "crypto-js": "^4.0.0",
     "express": "^4.17.1",
-    "pug": "^3.0.0",
-    "venom-bot": "^2.1.2"
+    "fluent-ffmpeg": "^2.1.2",
+    "imagemin": "^7.0.1",
+    "imagemin-jpeg-recompress": "^7.0.0",
+    "mime": "^2.4.6",
+    "multer": "^1.4.2",
+    "mustache-express": "^1.3.0",
+    "socket.io": "^2.3.0",
+    "venom-bot": "^2.2.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
   }
 }
