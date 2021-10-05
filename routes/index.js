@@ -1,6 +1,6 @@
 import express from 'express';
 import http from 'http';
-import venom from 'venom-bot';
+import bot from '@wppconnect-team/wppconnect';
 import { promises as fsp } from 'fs';
 import fs from 'fs';
 import mimetype from 'mime-types';
@@ -102,7 +102,7 @@ const upload = multer({
 
 // validações de ambiente
 if (process.env.NODE_ENV == 'development') {
-	venom.defaultLogger.level = 'silly';
+	bot.defaultLogger.level = 'silly';
 	activelog = true;
 	options.headless = false;
 	options.logQR = false;
@@ -110,9 +110,9 @@ if (process.env.NODE_ENV == 'development') {
 	delete options.browserWS;
 	delete options.browserArgs;
 } else {
-	// venom.defaultLogger.level = 'silly';
+	// bot.defaultLogger.level = 'silly';
 	// activelog = true;
-	venom.defaultLogger.transports.forEach((t) => (t.silent = true));
+	bot.defaultLogger.transports.forEach((t) => (t.silent = true));
 }
 
 // criando pasta caso ela nao exista
@@ -185,7 +185,7 @@ router.get(`/sessions`, (req, res) => {
 	}
 });
 
-// Autenticação para criar o venom
+// Autenticação para criar o bot
 router.get(`/:session/autenticacao`, async (req, res) => {
 	const session = req.params.session;
 	const webhook = req.query.webhook;
@@ -1444,7 +1444,7 @@ async function start_session(session, postwebhook = '') {
 			...options
 		};
 		try {
-			await venom
+			await bot
 				.create(CreateOptions)
 				.then(async (client) => {
 					delete clientsArray[session];
